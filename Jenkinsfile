@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // The only two values you replace with your own
-        IMAGE_NAME  = 'DOCKERHUBUSER/demo-cicd-app'
+        IMAGE_NAME  = 'dockeruser/demo-cicd-app'
         DEPLOY_HOST = 'PUBLIC_IP'           // public IP of your EC2 instance
 
         IMAGE_TAG   = '1.0'
