@@ -54,7 +54,7 @@ pipeline {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} '
                             docker pull ${IMAGE_NAME}:${IMAGE_TAG} &&
-                            docker rm -f ${APP_NAME} || true &&
+                            (docker rm -f ${APP_NAME} || true) &&
                             docker run -d --name ${APP_NAME} -p ${APP_PORT}:8080 --restart unless-stopped ${IMAGE_NAME}:${IMAGE_TAG}
                         '
                     """
