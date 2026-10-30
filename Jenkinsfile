@@ -42,7 +42,7 @@ pipeline {
 
                     sh 'docker push ${IMAGE_NAME}:${IMAGE_TAG}'
 
-                    // Always log out, otherwise the next run may fail to authenticate
+                    // Log out so the token is not left stored in the Jenkins container
                     sh 'docker logout'
                 }
             }
